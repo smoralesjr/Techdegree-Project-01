@@ -12,10 +12,10 @@ var quotes = [
 
   {
 
-    quote: "Men make their own history, but they do not make it as they please; they do not make it under self-selected circumstances, but under circumstances existing already, given and transmitted from the past.",
+    quote: "The philosophers have only interpreted the world, in various ways; the point is to change it.",
     source: "Karl Marx",
-    citation: "The Eighteenth Brumaire of Louis Bonaparte",
-    year: 1852
+    citation: "Theses On Feuerbach",
+    year: 1888
 
   },
 
@@ -37,12 +37,38 @@ var quotes = [
 //creating a function, getRandomQuote, which selects a random quote object from the quotes array and returns the randomly selected quote object.
 
 var getRandomQuote = function () {
+
   var max = quotes.length;
 
-  var randomQuoteIndex = Math.floor( Math.random() * max);
-  return quotes[randomQuoteIndex].quote;
+  var randomQuoteIndex = Math.floor( Math.random() * max );
+  return quotes[randomQuoteIndex];
 };
 
+//Creating a function named printQuote which calls getRandomQuote and outputs to an html string
+
+var printQuote = function () {
+
+  var quote = getRandomQuote();
+  var html = '<p class="quote">' + quote.quote + '</p>';
+  html += '<p class="source">' + quote.source;
+
+  if (quote.citation) {
+
+    html += '<span class="citation">' + quote.citation + '</span>';
+
+  };
+
+  if (quote.year) {
+
+    html += '<span class="year">' + quote.year + '</span>';
+
+  };
+
+  html += '</p>'
+  document.getElementById('quote-box').innerHTML = html;
+
+
+};
 
 // event listener to respond to "Show another quote" button clicks
 // when user clicks anywhere on the button, the "printQuote" function is called

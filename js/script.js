@@ -34,6 +34,16 @@ var quotes = [
 ];
 
 
+//creating a function, getRandomQuote, which selects a random quote object from the quotes array and returns the randomly selected quote object.
+
+var getRandomQuote = function () {
+  var max = quotes.length;
+
+  var randomQuoteIndex = Math.floor( Math.random() * max);
+  return quotes[randomQuoteIndex].quote;
+};
+
+
 // event listener to respond to "Show another quote" button clicks
 // when user clicks anywhere on the button, the "printQuote" function is called
 document.getElementById('loadQuote').addEventListener("click", printQuote, false);

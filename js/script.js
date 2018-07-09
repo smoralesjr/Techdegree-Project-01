@@ -29,6 +29,12 @@ var quotes = [
     quote: "Read some good, heavy, serious books just for discipline: Take yourself in hand and master yourself.",
     source: "W.E.B. Du Bois"
 
+  },
+
+  {
+    quote: "Compassion is the radicalism of our time.",
+    source: "His Holiness, the Dalai Lama"
+    
   }
 
 ];

@@ -62,8 +62,13 @@ var randomBgColor = function () {
   var blue = Math.floor( Math.random() * 256 );
   var bgColor = 'rgb(' + red + ',' + green + ',' + blue + ')';
 
+//sets background color of the body of the page to bgColor
+
   document.body.style.background = bgColor;
 
+//sets background color of the loadQuote button to bgColor
+
+  document.getElementById('loadQuote').style.background = bgColor;
 };
 
 //creating a function named printQuote which calls getRandomQuote and outputs to an html string

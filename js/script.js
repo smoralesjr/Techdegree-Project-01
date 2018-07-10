@@ -3,39 +3,39 @@ var quotes = [
 
   {
 
-    quote: "The assumption that what currently exists must necessarily exist is the acid that corrodes all visionary thinking.",
-    source: "Murray Bookchin",
-    citation: "The Meaning of Confederalism",
+    quote: 'The assumption that what currently exists must necessarily exist is the acid that corrodes all visionary thinking.',
+    source: 'Murray Bookchin',
+    citation: 'The Meaning of Confederalism',
     year: 1990
 
   },
 
   {
 
-    quote: "The philosophers have only interpreted the world, in various ways; the point is to change it.",
-    source: "Karl Marx",
-    citation: "Theses On Feuerbach",
+    quote: 'The philosophers have only interpreted the world, in various ways; the point is to change it.',
+    source: 'Karl Marx',
+    citation: 'Theses On Feuerbach',
     year: 1888
 
   },
 
   {
-    quote: "The only way to get good at solving problems is to solve them.",
-    source: "Seth Godin",
+    quote: 'The only way to get good at solving problems is to solve them.',
+    source: 'Seth Godin',
 
   },
 
   {
 
-    quote: "Read some good, heavy, serious books just for discipline: Take yourself in hand and master yourself.",
-    source: "W.E.B. Du Bois"
+    quote: 'Read some good, heavy, serious books just for discipline: Take yourself in hand and master yourself.',
+    source: 'W.E.B. Du Bois'
 
   },
 
   {
 
-    quote: "Compassion is the radicalism of our time.",
-    source: "His Holiness, the Dalai Lama"
+    quote: 'Compassion is the radicalism of our time.',
+    source: 'His Holiness, the Dalai Lama'
 
   }
 
@@ -53,13 +53,27 @@ var getRandomQuote = function () {
 
 };
 
-//Creating a function named printQuote which calls getRandomQuote and outputs to an html string
+//creating a function named randomBgColor which changes the background to a random color
+
+var randomBgColor = function () {
+
+  var red = Math.floor( Math.random() * 256 );
+  var green = Math.floor( Math.random() * 256 );
+  var blue = Math.floor( Math.random() * 256 );
+  var bgColor = 'rgb(' + red + ',' + green + ',' + blue + ')';
+
+  document.body.style.background = bgColor;
+
+};
+
+//creating a function named printQuote which calls getRandomQuote and outputs to an html string
 
 var printQuote = function () {
 
   var quote = getRandomQuote();
 
 //creating variable to hold html string
+
   var html = '<p class="quote">' + quote.quote + '</p>';
   html += '<p class="source">' + quote.source;
 
@@ -83,6 +97,9 @@ var printQuote = function () {
 
   document.getElementById('quote-box').innerHTML = html;
 
+//changing the background color
+
+  randomBgColor();
 };
 
 //setting an automatic refresh for the quote-box every five seconds.

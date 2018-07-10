@@ -26,15 +26,17 @@ var quotes = [
   },
 
   {
+
     quote: "Read some good, heavy, serious books just for discipline: Take yourself in hand and master yourself.",
     source: "W.E.B. Du Bois"
 
   },
 
   {
+
     quote: "Compassion is the radicalism of our time.",
     source: "His Holiness, the Dalai Lama"
-    
+
   }
 
 ];
@@ -48,6 +50,7 @@ var getRandomQuote = function () {
 
   var randomQuoteIndex = Math.floor( Math.random() * max );
   return quotes[randomQuoteIndex];
+
 };
 
 //Creating a function named printQuote which calls getRandomQuote and outputs to an html string
@@ -55,8 +58,12 @@ var getRandomQuote = function () {
 var printQuote = function () {
 
   var quote = getRandomQuote();
+
+//creating variable to hold html string
   var html = '<p class="quote">' + quote.quote + '</p>';
   html += '<p class="source">' + quote.source;
+
+// conditionals below to check if the object in the quote array has a citation and year, then printing them out if they do.
 
   if (quote.citation) {
 
@@ -71,10 +78,16 @@ var printQuote = function () {
   };
 
   html += '</p>'
+
+//adding the html to the quote-box
+
   document.getElementById('quote-box').innerHTML = html;
 
-
 };
+
+//setting an automatic refresh for the quote-box every five seconds.
+
+var quoteTimer = setInterval (printQuote, 5000);
 
 // event listener to respond to "Show another quote" button clicks
 // when user clicks anywhere on the button, the "printQuote" function is called

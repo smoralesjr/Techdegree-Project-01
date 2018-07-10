@@ -6,7 +6,8 @@ var quotes = [
     quote: 'The assumption that what currently exists must necessarily exist is the acid that corrodes all visionary thinking.',
     source: 'Murray Bookchin',
     citation: 'The Meaning of Confederalism',
-    year: 1990
+    year: 1990,
+    tag: 'politics'
 
   },
 
@@ -15,28 +16,31 @@ var quotes = [
     quote: 'The philosophers have only interpreted the world, in various ways; the point is to change it.',
     source: 'Karl Marx',
     citation: 'Theses On Feuerbach',
-    year: 1888
+    year: 1888,
+    tag: 'politics'
 
   },
 
   {
     quote: 'The only way to get good at solving problems is to solve them.',
     source: 'Seth Godin',
+    tag: 'motivation'
 
   },
 
   {
 
     quote: 'Read some good, heavy, serious books just for discipline: Take yourself in hand and master yourself.',
-    source: 'W.E.B. Du Bois'
+    source: 'W.E.B. Du Bois',
+    tag: 'motivation'
 
   },
 
   {
 
     quote: 'Compassion is the radicalism of our time.',
-    source: 'His Holiness, the Dalai Lama'
-
+    source: 'His Holiness, the Dalai Lama',
+    tag: 'religion'
   }
 
 ];
@@ -48,7 +52,10 @@ var getRandomQuote = function () {
 
   var max = quotes.length;
 
+//generating a random number from 0 to 3 for the index of the quote object and returning the selected object
+
   var randomQuoteIndex = Math.floor( Math.random() * max );
+
   return quotes[randomQuoteIndex];
 
 };
@@ -57,9 +64,14 @@ var getRandomQuote = function () {
 
 var randomBgColor = function () {
 
+// generating random numbers to set the rgb colors of the background color
+
   var red = Math.floor( Math.random() * 256 );
   var green = Math.floor( Math.random() * 256 );
   var blue = Math.floor( Math.random() * 256 );
+
+//creating bgColor variable with the randomly generated rgb numbers as its values
+
   var bgColor = 'rgb(' + red + ',' + green + ',' + blue + ')';
 
 //sets background color of the body of the page to bgColor
@@ -69,6 +81,7 @@ var randomBgColor = function () {
 //sets background color of the loadQuote button to bgColor
 
   document.getElementById('loadQuote').style.background = bgColor;
+
 };
 
 //creating a function named printQuote which calls getRandomQuote and outputs to an html string
@@ -96,7 +109,12 @@ var printQuote = function () {
 
   };
 
-  html += '</p>'
+  if (quote.tag) {
+
+    html += '<span class="tag">' + quote.tag + '</span>';
+
+};
+    html += '</p>'
 
 //adding the html to the quote-box
 
@@ -105,6 +123,7 @@ var printQuote = function () {
 //changing the background color
 
   randomBgColor();
+
 };
 
 //setting an automatic refresh for the quote-box every five seconds.

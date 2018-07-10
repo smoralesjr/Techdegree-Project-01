@@ -95,7 +95,7 @@ var printQuote = function () {
   var html = '<p class="quote">' + quote.quote + '</p>';
   html += '<p class="source">' + quote.source;
 
-// conditionals below to check if the object in the quote array has a citation and year, then printing them out if they do.
+// conditionals below to check if the object in the quote array has a citation, year, and tag, then printing them out if they do.
 
   if (quote.citation) {
 
@@ -127,6 +127,7 @@ var printQuote = function () {
 };
 
 //setting an automatic refresh for the quote-box every five seconds.
+//TODO: figure out how to make the quoteTimer reset when the button is clicked
 
 var quoteTimer = setInterval (printQuote, 5000);
 

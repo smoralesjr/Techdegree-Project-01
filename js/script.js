@@ -99,19 +99,19 @@ var printQuote = function () {
 
   if (quote.citation) {
 
-    html += '<span class="citation">' + quote.citation + '</span>';
+    html += `<span class="citation"> ${quote.citation} </span>`;
 
   };
 
   if (quote.year) {
 
-    html += '<span class="year">' + quote.year + '</span>';
+    html += `<span class="year"> ${quote.year} </span>`;
 
   };
 
   if (quote.tag) {
 
-    html += '<span class="tag">' + quote.tag + '</span>';
+    html += `<span class="tag"> ${quote.tag} </span>`;
 
 };
     html += '</p>'

@@ -92,8 +92,8 @@ var printQuote = function () {
 
 //creating variable to hold html string
 
-  var html = '<p class="quote">' + quote.quote + '</p>';
-  html += '<p class="source">' + quote.source;
+  var html = `<p class="quote"> ${quote.quote}</p>`;
+  html += `<p class="source"> ${quote.source}`;
 
 // conditionals below to check if the object in the quote array has a citation, year, and tag, then printing them out if they do.
 
